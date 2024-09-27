@@ -51,4 +51,4 @@ demo = gr.Interface(
     title="Predict Credit Card Fraud"
     )
 
-demo.launch(server_name=GRADIO_SERVER_NAME, server_port=GRADIO_SERVER_PORT, share=True)
+demo.launch(server_name=GRADIO_SERVER_NAME, server_port=GRADIO_SERVER_PORT)
