@@ -5,6 +5,9 @@ import json
 import gradio as gr
 import numpy as np
 
+# To avoid this Error: '''it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.'''
+os.environ[ 'MPLCONFIGDIR' ] = '/tmp/'
+
 # Get a few environment variables. These are so we:
 # - Know what endpoint we should request
 # - Set server name and port for Gradio
