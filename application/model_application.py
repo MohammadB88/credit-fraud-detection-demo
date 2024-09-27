@@ -14,6 +14,7 @@ os.environ[ 'MPLCONFIGDIR' ] = '/tmp/'
 URL = os.getenv("INFERENCE_ENDPOINT")                       # You need to manually set this with an environment variable
 GRADIO_SERVER_PORT = int(os.getenv("GRADIO_SERVER_PORT"))   # Automatically set by the Dockerfile
 GRADIO_SERVER_NAME = os.getenv("GRADIO_SERVER_NAME")        # Automatically set by the Dockerfile
+#GRADIO_SERVER_SHARE = os.getenv("GRADIO_SERVER_SHARE")        # Automatically set by the Dockerfile
 
 # Create a small function that sends data to the inference endpoint and recieves a prediction
 def predict(distance_from_home,distance_from_last_transaction,ratio_to_median_purchase_price,repeat_retailer,used_chip,used_pin_number,online_order):
@@ -50,4 +51,4 @@ demo = gr.Interface(
     title="Predict Credit Card Fraud"
     )
 
-demo.launch(server_name=GRADIO_SERVER_NAME, server_port=GRADIO_SERVER_PORT)
+demo.launch(server_name=GRADIO_SERVER_NAME, server_port=GRADIO_SERVER_PORT, share=True)
